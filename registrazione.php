@@ -1,41 +1,48 @@
-<?php
-session_start();
-
-?>
 <!DOCTYPE html>
 <html lang="it">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
+  <title>Registrazione </title>
 
-  <title>
-    Area Riservata
-  </title>
-
-  <meta name="keywords" content=" assignment finale grafica, html, css" />
+  <meta name="keywords" content=" assignment finale, grafica, html, css" />
   <meta name="description" content="assignment finale" />
   <meta name="author" content=" Manuela Ferri e Giorgia Canova" />
+
+  <meta name="viewport" content="width=device-width, initial scale 1.0">
 
   <link rel="stylesheet" type="text/css" href="style.css" />
 
 </head>
 
 <body>
-
   <?php include('menu.php'); ?>
 
-  <h2>ACCEDI</h2>
+  <h2>REGISTRATI</h2>
   <hr>
 
 
   <article>
-    <p class="testo">Qui potrà accedere al suo profilo, se dovesse rinscontrare problemi ci <a href="contatti.html"> contatti.</a></p>
+    <p class="testo"> Benvenuto in Move in Turin, <br></br>
+      qui può effettuare la registrazione.</p>
     <section>
+      <label for="nome">Nome:</label><br /> <input id="nome" type="text" name="nome" value="_" /> <br>
+      <label for="cognome">Cognome:</label><br /> <input id="cognome" type="text" name="cognome" value="_" /><br>
+      <label for="mail">E-mail</label><br /> <input id="mail" type="text" name="E-mail" value="_" /><br>
+      <label for="confermamail">Conferma l'E-mail</label><br /> <input id="confermamail" type="text" name="confermamail" value="_" /><br>
+      <p class="testo">Scegli un username!</p>
       <label for="username">Username</label><br /> <input id="username" type="text" name="username" value="_" size="45" maxlength="45" /> <br>
       <br />
+      <p class="testo"> La password deve contenere almeno:</p>
+      <ul>
+        <li>8 caratteri</li>
+        <li>almeno due cifre (comprese tra 0 e 9)</li>
+        <li> un simbolo speciale </li>
+      </ul>
       <label for="password">Password</label><br /> <input id="password" type="text" name="password" value="_" size="45" maxlength="45" /><br>
+      <label for="password">Conferma la tua Password</label><br /> <input id="confermapassword" type="text" name="confermapassword" value="_" size="45" maxlength="45" /><br>
       <br />
-      <label for="mail">E-mail</label><br /> <input id="mail" type="text" name="E-mail" value="_" /><br>
+
 
 
       <br>
@@ -71,6 +78,7 @@ session_start();
 
   </footer>
 
-</body>
+
+
 
 </html>

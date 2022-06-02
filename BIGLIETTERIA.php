@@ -16,35 +16,7 @@
 
   </head>
   <body>
-  <header class="header">
-
-   <img src="immagini/logo3.png" alt="logo" title="logo" id="logo">
-
-<h1 id="id"> Move in Turin </h1>
-
-<p><label for="search">cerca nel sito:</label><input id="search" type="search" placeholder="search" name="search" value="search" />
-
-                          <input type="submit" name="submit" value="invia"> </p>
-
-  <div class="login"><a href="areariservata.html">Login</a></div>
-  
-<nav>
-    <div class="menu">
-      <ul>
-
-        <li tabindex="1"><a href="home.html" > Home </a></li>
-        <li class="active" tabindex="2" ><a href="biglietteria.html" > Biglietteria </a></li>
-        <li tabindex="3"><a href="linee.html"> Linee e Orari </a></li>
-        <li tabindex="4"><a href="pagamenti.html"> Pagamento sanzioni </a></li>
-        <li tabindex="5" > <a href="reclami.html"> Reclami </a> </li>
-		<li tabindex="6"><a href="avvisi.html">Avvisi</a></li>
-        
-           
-
-      </ul>
-    </div>
-      </nav>
-</header>
+  <?php include('menu.php');?>
 
 
 <article>

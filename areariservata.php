@@ -21,8 +21,21 @@ session_start();
 </head>
 
 <body>
+  <header class="header">
 
-  <?php include('menu.php'); ?>
+    <img src="immagini/logo3.png" alt="logo" title="logo" id="logo">
+
+    <h1 id="id"> Move in Turin </h1>
+
+    <p><label for="search">cerca nel sito:</label>
+      <input id="search" type="search" placeholder="search" name="search" value="search" />
+      <input type="submit" name="submit" value="invia">
+    </p>
+
+
+    <?php include('menu.php');?>
+
+  </header>
 
   <h2>ACCEDI</h2>
   <hr>
