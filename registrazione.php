@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <?php include('menu.php'); ?>
+  <?php include('header.php');?>
 
   <h2>REGISTRATI</h2>
   <hr>
