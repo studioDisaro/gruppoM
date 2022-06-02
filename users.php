@@ -12,11 +12,11 @@
     <?php
         if (isset($_GET['action'])) {
             if ($_GET['action'] == "edit") {
-                edit_user($_GET['user_id'], $_GET['surname'], $_GET['name']);
+                $edit = edit_user($_GET['user_id'], $_GET['surname'], $_GET['name']);
             }
 
             if ($_GET['action'] == "new") {
-                new_user($_GET['surname'], $_GET['name'], $_GET['username'], $_GET['password']);
+                $new = new_user($_GET['surname'], $_GET['name'], $_GET['username'], $_GET['password']);
             }
         }
 
@@ -28,7 +28,7 @@
     ?>
 </head>
 
-<body>
+<body id="body">
     <ul>
         <?php foreach ($users as $user) : ?>
             <button onclick="location='users.php?user_id=<?= $user['user_id'] ?>'"><?= $user['user_surname'] ?></button>
@@ -47,6 +47,7 @@
             <input type="hidden" name="user_id" value="<?= $user_selected['user_id'] ?>">
             <input type="text" name="surname" value="<?= $user_selected['user_surname'] ?>">
             <input type="text" name="name" value="<?= $user_selected['user_name'] ?>">
+            <p>UTENZA: <?= $user_selected['user_username'] ?></p>
             <button type="submit">Salva modifiche</button>
         </form>
     <?php endif; ?>
@@ -59,10 +60,20 @@
                 <input type="text" name="name" placeholder="COGNOME" value="">
                 <input type="text" name="username" placeholder="USERNAME" value="">
                 <input type="password" name="password" placeholder="PASSWORD" value="">
+                <button onclick="check_exist_User()">EILA</button>
                 <button type="submit">Salva modifiche</button>
             </form>
         <?php endif; ?>
     <?php endif; ?>
+
+    <?php if(isset($new)){
+        if (is_numeric($new)) {
+            echo "NUOVA UTENZA CREATA CORRETTAMENTE CON ID ".$new;
+        }else {
+            echo "ERRORE CREAZIONE UTENZA ".$new;
+        }
+    }
+    ?>
 </body>
 
 </html>
