@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="it">
 
@@ -18,9 +19,18 @@
 </head>
 
 <body>
-  <?php include('header.php');?>
+  <?php include 'header.php';?>
   <article>
-    <h2> Benvenuto in Moving in Turin! </h2>
+    <?php //var_dump($_SESSION);?>
+    <?php if(isset($_SESSION)){
+      if (isset($_SESSION['auth_login'])) {
+        echo"<h1>Benvenuto ".$_SESSION['user']['user_name']." in Moving in Turin!</h1>";
+      }
+    }else{
+      echo "<h2>Benvenuto in Moving in Turin! </h2>";
+    }
+    ?>
+    
     <p class="testo">Qui avrete sempre a portata di mano informazioni, avvisi e molto altro sulla città di Torino! <br>
       La nostra è una società nata nel 1990: entrata sul mercato in tempi relativamente recenti,<br>
       l’azienda si è trovata a fronteggiare giganti del settore, ma è comunque riuscita in pochissimo <br>

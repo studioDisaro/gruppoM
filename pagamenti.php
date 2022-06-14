@@ -1,3 +1,5 @@
+<?php session_start() ; ?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -34,16 +36,17 @@
 
         <br><br>
 
-        <label for="password2">Password:</label> <input id="password2" type="text" name="password" value="_" size="30" maxlength="30" />
+        <label for="password2">Password:</label> <input id="password2" type="password" name="password" value="_" size="30" maxlength="30" />
 
         <br>
         <br>
         <input type="submit" name="invia" value="invia" />
+        
 
         <br>
         <br>
         <span>Non ricordi Username o Password? </span>
-        <span> Non sei registrato? <a href="registrazione.html">Registrati</a> </span>
+        <span> Non sei registrato? <a href="registrazione.php">Registrati</a> </span>
       </div>
 
 

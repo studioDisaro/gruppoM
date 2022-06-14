@@ -23,7 +23,7 @@ session_start();
 <body>
 
   <?php include('header.php');?>
-
+<?php include ('connection.php'); ?>
   <h2>ACCEDI</h2>
   <hr>
 
@@ -31,16 +31,16 @@ session_start();
   <article>
     <p class="testo">Qui potrà accedere al suo profilo, se dovesse rinscontrare problemi ci <a href="contatti.html"> contatti.</a></p>
     <section>
-      <label for="username">Username</label><br /> <input id="username" type="text" name="username" value="_" size="45" maxlength="45" /> <br>
-      <br />
-      <label for="password">Password</label><br /> <input id="password" type="text" name="password" value="_" size="45" maxlength="45" /><br>
-      <br />
-      <label for="mail">E-mail</label><br /> <input id="mail" type="text" name="E-mail" value="_" /><br>
-
-
-      <br>
-      <input type="submit" name="invia" value="invia" />
+      <form action="login_action.php" method="post">
+       <input style=" margin-left: 50%" id="username" type="text" name="username" value="_"   /> 
+      
+      Username: <input style=" margin-left: 50%"style=" margin-left: 50%" id="password" type="password" name="password" value="_"   />
+      Password: <input style=" margin-left: 50%" type="submit" name="invia" value="invia" />
+</form>
     </section>
+
+    <span>Non ricordi Username o Password? </span>
+        <span> Non sei registrato? <a href="registrazione.php">Registrati</a> </span>
   </article>
 
 

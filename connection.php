@@ -6,7 +6,6 @@ function openCon(){
     $paramConn['mysql_user'],
     $paramConn['mysql_password']
   );
-
   if ($conn->connect_error) {
     return($conn->connect_error);
   }else{

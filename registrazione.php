@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <?php include('header.php');?>
+  <?php include 'header.php';?>
 
   <h2>REGISTRATI</h2>
   <hr>
@@ -26,8 +26,10 @@
     <p class="testo"> Benvenuto in Move in Turin, <br></br>
       qui può effettuare la registrazione.</p>
     <section>
+      <form action = "signup.php" method = "post">
       <label for="nome">Nome:</label><br /> <input id="nome" type="text" name="nome" value="_" /> <br>
       <label for="cognome">Cognome:</label><br /> <input id="cognome" type="text" name="cognome" value="_" /><br>
+      <label for="eta">Età::</label><br /> <input id="cognome" type="text" name="eta" value="_" /><br>
       <label for="mail">E-mail</label><br /> <input id="mail" type="text" name="E-mail" value="_" /><br>
       <label for="confermamail">Conferma l'E-mail</label><br /> <input id="confermamail" type="text" name="confermamail" value="_" /><br>
       <p class="testo">Scegli un username!</p>
@@ -40,8 +42,9 @@
         <li> un simbolo speciale </li>
       </ul>
       <label for="password">Password</label><br /> <input id="password" type="text" name="password" value="_" size="45" maxlength="45" /><br>
-      <label for="password">Conferma la tua Password</label><br /> <input id="confermapassword" type="text" name="confermapassword" value="_" size="45" maxlength="45" /><br>
+      <label for="confermapassword">Conferma la tua Password</label><br /> <input id="confermapassword" type="text" name="confermapassword" value="_" size="45" maxlength="45" /><br>
       <br />
+      </form>
 
 
 

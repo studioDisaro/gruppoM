@@ -56,8 +56,8 @@
         <?php if ($_GET['action']=='new_user') : ?>
             <form action="users.php" method="get">
                 <input type="hidden" name="action" value="new">
-                <input type="text" name="surname" placeholder="NOME" value="">
-                <input type="text" name="name" placeholder="COGNOME" value="">
+                <input type="text" name="surname" placeholder="COGNOME" value="">
+                <input type="text" name="name" placeholder="NOME" value="">
                 <input type="text" name="username" placeholder="USERNAME" value="">
                 <input type="password" name="password" placeholder="PASSWORD" value="">
                 <button onclick="check_exist_User()">EILA</button>

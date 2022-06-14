@@ -124,11 +124,12 @@
             </p>
         </div>
 
+        <h1 style="margin-top: 10%; border:black 1px;"> Desidera acquistare un biglietto? <a href="compra.php" style="font-style: bold; background-color:aqua; border: 1px black; border-radius:25%; "> Acquista </a></h1>
     </section>
 
     <br><br>
-
-
+<h2><a href="compra.php"> compra biiglietto </a></h2>
+<h2><a href="abbonamenti.php"> compra abbonamento </a></h2>
     <aside>
         <div class="mto">
             MOVE inTO S.p.A Corso Regina Margherita, 10124 Torino TO
@@ -142,7 +143,7 @@
     <footer>
         <div class="footerhome">
             <ul>
-                <li><a href="contatti.html">Contatti</a></li>
+                <li><a href="contatti.php">Contatti</a></li>
                 <li> Lavora con noi </li>
             </ul>
 

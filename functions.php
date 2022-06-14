@@ -9,6 +9,7 @@ function verifyLogin($username, $password){
     ];
 
     $resUser = get_user_ByUsername($username);
+    //return $resUser;
 
     if (!$resUser) {
         $result = [
@@ -37,7 +38,9 @@ function get_user_ByUsername($username)
 
     $username = $conn->escape_string($username);
 
-    $sql = "SELECT * FROM `user` WHERE `user_username` = '$username';";
+    $sql = "SELECT * FROM `users` WHERE `user_username` = '$username';";
+
+    //return $sql;
     $res = $conn->query($sql);
     $conn->close();
     if ($res && $res->num_rows) {
