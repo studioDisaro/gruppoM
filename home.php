@@ -22,10 +22,9 @@
   <?php include 'header.php';?>
   <article>
     <?php //var_dump($_SESSION);?>
-    <?php if(isset($_SESSION)){
+    <?php
       if (isset($_SESSION['auth_login'])) {
         echo"<h1>Benvenuto ".$_SESSION['user']['user_name']." in Moving in Turin!</h1>";
-      }
     }else{
       echo "<h2>Benvenuto in Moving in Turin! </h2>";
     }
