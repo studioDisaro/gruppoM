@@ -11,8 +11,7 @@
 
         $res = verifyLogin($username, $password);
 
-        /*insert debug var_dump*/
-        var_dump($res);
+        //var_dump($res);
         //exit;
 
         if ($res['success']) {
