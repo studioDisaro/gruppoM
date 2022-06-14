@@ -41,20 +41,20 @@
         <li>almeno due cifre (comprese tra 0 e 9)</li>
         <li> un simbolo speciale </li>
       </ul>
-      <label for="password">Password</label><br /> <input id="password" type="text" name="password" value="" size="45" maxlength="45" /><br>
-      <label for="confermapassword">Conferma la tua Password</label><br /> <input id="confermapassword" type="text" name="confermapassword" value="" size="45" maxlength="45" /><br>
+      <label for="password">Password</label><br /> <input id="password" type="password" name="password" value="" size="45" maxlength="45" /><br>
+      <label for="confermapassword">Conferma la tua Password</label><br /> <input id="confermapassword" type="password" name="confermapassword" value="" size="45" maxlength="45" /><br>
       <br />
-      </form>
-
-
-
-      <br>
       <input type="submit" name="invia" value="invia" />
+      </form>
     </section>
   </article>
 
+  <?php 
+  if(isset($_GET['error'])){
+    echo $_GET['message'];
+  }
 
-
+?>
 
 
   <br>

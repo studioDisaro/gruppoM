@@ -1,21 +1,29 @@
 <?php
-$nome = $_POST['nome'] ;
-$cognome = $_POST['cognome'] ;
-$eta = $_POST['eta'] ;
-$mail = $_POST ['mail'] ;
-$confermamail = $_POST ['confermamail'];
-$username = $_POST ['username'] ;
-$password = $_POST ['password'] ;
-$confermapassword = $_POST ['confermapassword'] ;
 
-if ($mail == $confermamail) {
-      if ($eta >16) {echo "Benvenuto/a" . $nome ;
-      } else {echo "non puoi entrare" ; } 
+var_dump($_POST);
+$nome =  trim($_POST['nome']) ?  trim($_POST['nome']) : "";
+$cognome =  trim($_POST['cognome']) ?  trim($_POST['cognome']) : "";
+$eta =  trim($_POST['eta']) ?  trim($_POST['eta']) : "";
+$mail =  trim($_POST ['E-mail']) ?  trim($_POST['E-mail']) : "";
+$confermamail =  trim($_POST ['confermamail']) ?  trim($_POST['confermamail']) : "";
+$username =  trim($_POST ['username']) ?  trim($_POST['username']) : "";
+$password =  trim($_POST ['password']) ?  trim($_POST['password']) : "";
+$confermapassword =  trim($_POST ['confermapassword']) ?  trim($_POST['confermapassword']) : "";
 
-} else { echo "le due email non corrispondono, riprovi." ; 
+$message="";
+
+if ($eta < 16) {
+      $message=urlencode('La tua età non è idonea alla registrazione');
+      header('Location: registrazione.php?error=true&message='.$message);
+ }
+
+
+if ($mail != $confermamail) {
+      $message=urlencode('Le due email non corrispondono, riprovi');
+      header('Location: registrazione.php?error=true&message='.$message);
 } ;
 
-switch ($password) 
+
 
 
 

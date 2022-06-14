@@ -54,7 +54,8 @@
             user_password VARCHAR(256) NOT NULL,
             user_surname VARCHAR(256),
             user_name VARCHAR(256),
-            user_email VARCHAR(256)
+            user_email VARCHAR(256),
+            user_age INT(3)
             )ENGINE=INNODB;";
         ?>
 
