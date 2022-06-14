@@ -10,7 +10,9 @@
         $password = isset($_POST['password']) ? $_POST['password'] : "";
 
         $res = verifyLogin($username, $password);
-        //var_dump($res);
+
+        /*insert debug var_dump*/
+        var_dump($res);
         //exit;
 
         if ($res['success']) {
