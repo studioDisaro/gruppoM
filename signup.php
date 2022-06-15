@@ -19,7 +19,12 @@ if ($eta < 16) {
 
 
 if ($mail != $confermamail) {
-      $message=urlencode('Le due email non corrispondono, riprovi');
+      $message=urlencode('Le due email non corrispondono, riprova');
+      header('Location: registrazione.php?error=true&message='.$message);
+} 
+
+if ($password != $confermapassword) {
+      $message=urlencode('Le due password non corrispondono, riprova');
       header('Location: registrazione.php?error=true&message='.$message);
 } ;
 
