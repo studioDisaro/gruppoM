@@ -66,7 +66,7 @@ if (isset($_POST)) {
                   Header('Location: home.php');
             exit;
             }else {
-                  $message=urlencode('Problema nella registrazione contattare l\'amminitratroe di sistema');
+                  $message=urlencode('Problema nella registrazione contattare l\'amministratore di sistema');
                   header('Location: registrazione.php?error=true&message='.$message);
                   exit;
             }
