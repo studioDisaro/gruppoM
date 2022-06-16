@@ -16,45 +16,49 @@
 </head>
 
 <body>
-  <?php include 'header.php';?>
+  <?php include 'header.php'; ?>
 
   <h2>REGISTRATI</h2>
   <hr>
 
 
   <article>
+
+
+
+
     <p class="testo"> Benvenuto in Move in Turin, <br></br>
       qui può effettuare la registrazione.</p>
     <section>
-      <form action = "signup.php" method = "post">
-      <label for="nome">Nome:</label><br /> <input id="nome" type="text" name="nome" value="" /> <br>
-      <label for="cognome">Cognome:</label><br /> <input id="cognome" type="text" name="cognome" value="" /><br>
-      <label for="eta">Età::</label><br /> <input id="cognome" type="text" name="eta" value="" /><br>
-      <label for="mail">E-mail</label><br /> <input id="mail" type="text" name="E-mail" value="" /><br>
-      <label for="confermamail">Conferma l'E-mail</label><br /> <input id="confermamail" type="text" name="confermamail" value="" /><br>
-      <p class="testo">Scegli un username!</p>
-      <label for="username">Username</label><br /> <input id="username" type="text" name="username" value="" size="45" maxlength="45" /> <br>
-      <br />
-      <p class="testo"> La password deve contenere almeno:</p>
-      <ul>
-        <li>8 caratteri</li>
-        <li>almeno due cifre (comprese tra 0 e 9)</li>
-        <li> un simbolo speciale </li>
-      </ul>
-      <label for="password">Password</label><br /> <input id="password" type="password" name="password" value="" size="45" maxlength="45" /><br>
-      <label for="confermapassword">Conferma la tua Password</label><br /> <input id="confermapassword" type="password" name="confermapassword" value="" size="45" maxlength="45" /><br>
-      <br />
-      <input type="submit" name="invia" value="invia" />
+
+      <?php if (isset($_GET['error'])) : ?>
+        <div class="div_errore">
+          <?= $_GET['message']; ?>
+        </div>
+      <?php endif; ?>
+
+      <form action="signup.php" method="post">
+        <label for="nome">Nome:</label><br /> <input id="nome" type="text" name="nome" value="" /> <br>
+        <label for="cognome">Cognome:</label><br /> <input id="cognome" type="text" name="cognome" value="" /><br>
+        <label for="eta">Età::</label><br /> <input id="cognome" type="text" name="eta" value="" /><br>
+        <label for="mail">E-mail</label><br /> <input id="mail" type="text" name="E-mail" value="" /><br>
+        <label for="confermamail">Conferma l'E-mail</label><br /> <input id="confermamail" type="text" name="confermamail" value="" /><br>
+        <p class="testo">Scegli un username!</p>
+        <label for="username">Username</label><br /> <input id="username" type="text" name="username" value="" size="45" maxlength="45" /> <br>
+        <br />
+        <p class="testo"> La password deve contenere almeno:</p>
+        <ul>
+          <li>8 caratteri</li>
+          <li>almeno due cifre (comprese tra 0 e 9)</li>
+          <li> un simbolo speciale </li>
+        </ul>
+        <label for="password">Password</label><br /> <input id="password" type="password" name="password" value="" size="45" maxlength="45" /><br>
+        <label for="confermapassword">Conferma la tua Password</label><br /> <input id="confermapassword" type="password" name="confermapassword" value="" size="45" maxlength="45" /><br>
+        <br />
+        <input type="submit" name="invia" value="invia" />
       </form>
     </section>
   </article>
-
-  <?php 
-  if(isset($_GET['error'])){
-    echo $_GET['message'];
-  }
-
-?>
 
 
   <br>

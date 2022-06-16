@@ -53,7 +53,23 @@ if (isset($_POST)) {
 
             //QUINDI TUTTO OK CREIAMO UTENZA E RESTITUIAMO L'ID DELLA NUOVA UTENZA
             $id_newUser = new_user($cognome, $nome, $username, $password);
-            echo $id_newUser;
+            if ( is_numeric($id_newUser) ) {
+                  $res = get_user_byID($id_newUser);
+
+                  unset($res['user']['user_password']);
+                  unset($res['user']['user_creationTimestamp']);
+
+                  $_SESSION['auth_login']=true;
+                  $_SESSION['user']=$res['user'];
+
+                  //var_dump($_SESSION);
+                  Header('Location: home.php');
+            exit;
+            }else {
+                  $message=urlencode('Problema nella registrazione contattare l\'amminitratroe di sistema');
+                  header('Location: registrazione.php?error=true&message='.$message);
+                  exit;
+            }
       }
 
 }
