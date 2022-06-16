@@ -43,7 +43,7 @@ if (isset($_POST)) {
                   exit;
             }
 
-            if ( strlen($password) ) {
+            if ( strlen($password) < 8) {
                   $message=urlencode('La password inserita è troppo corta, riprova');
                   header('Location: registrazione.php?error=true&message='.$message);
                   exit;
