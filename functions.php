@@ -71,16 +71,17 @@ function get_users_list()
     return $records;
 }
 
-function new_user($user_surname, $user_name, $user_username, $user_password)
+function new_user($user_surname, $user_name, $email, $age, $user_username, $user_password)
 {
     $conn = openConDB();
 
     $user_surname = $conn->escape_string($user_surname);
     $user_name = $conn->escape_string($user_name);
+    $email = $conn->escape_string($email);
     $user_username = $conn->escape_string($user_username);
     $user_password = $conn->escape_string(password_hash($user_password, PASSWORD_DEFAULT));
 
-    $sql = "INSERT `users` (`user_surname`, `user_name`, `user_username`, `user_password`) VALUES ('$user_surname', '$user_name', '$user_username', '$user_password');";
+    $sql = "INSERT `users` (`user_surname`, `user_name`, `user_email`, `user_age`, `user_username`, `user_password`) VALUES ('$user_surname', '$user_name', '$email', '$age', '$user_username', '$user_password');";
     $res = $conn->query($sql);
     if ($res) {
         $user_id = $conn->insert_id;
@@ -117,14 +118,14 @@ function get_user_byID($user_id)
     }
 }
 
-function edit_user($user_id, $user_surname, $user_name)
+function edit_user($user_id, $user_surname, $email, $age)
 {
     $conn = openConDB();
 
     $user_surname = $conn->escape_string($user_surname);
-    $user_name = $conn->escape_string($user_name);
+    $email = $conn->escape_string($email);
 
-    $sql = "UPDATE `users` SET `user_surname` = '$user_surname', `user_name` = '$user_name' WHERE `user_id`='$user_id';";
+    $sql = "UPDATE `users` SET `user_surname` = '$user_surname', `user_email` = '$email', `user_age` = '$age' WHERE `user_id`='$user_id';";
     $res = $conn->query($sql);
     if ($res) {
         return 1;
