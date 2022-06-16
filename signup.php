@@ -41,7 +41,13 @@ if (isset($_POST)) {
                   $message=urlencode('Le due password non corrispondono, riprova');
                   header('Location: registrazione.php?error=true&message='.$message);
                   exit;
-            } ;
+            }
+
+            if ( strlen($password) ) {
+                  $message=urlencode('La password inserita è troppo corta, riprova');
+                  header('Location: registrazione.php?error=true&message='.$message);
+                  exit;
+            }
 
             //CONTROLLA ESISTENZA USERNAME
             $conto_utenze_con_stessa_user = check_username($username);
