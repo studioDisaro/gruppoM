@@ -52,7 +52,7 @@ if (isset($_POST)) {
             } ;
 
             //QUINDI TUTTO OK CREIAMO UTENZA E RESTITUIAMO L'ID DELLA NUOVA UTENZA
-            $id_newUser = new_user($cognome, $nome, $username, $password);
+            $id_newUser = new_user($cognome, $nome, $mail, $eta, $username, $password);
             if ( is_numeric($id_newUser) ) {
                   $res = get_user_byID($id_newUser);
 
@@ -60,7 +60,7 @@ if (isset($_POST)) {
                   unset($res['user']['user_creationTimestamp']);
 
                   $_SESSION['auth_login']=true;
-                  $_SESSION['user']=$res['user'];
+                  $_SESSION['user']=$res;
 
                   //var_dump($_SESSION);
                   Header('Location: home.php');
