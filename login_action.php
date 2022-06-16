@@ -7,7 +7,7 @@
         //var_dump($_POST);
 
         $username = isset($_POST['username']) ? $_POST['username'] : "";
-        $password = isset($_POST['password']) ? $_POST['password'] : "";
+        $password = isset($_POST['password']) ? $_POST['password'] : ""; //un po' diff
 
         $res = verifyLogin($username, $password);
 
