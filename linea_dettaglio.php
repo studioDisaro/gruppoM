@@ -25,9 +25,19 @@
     ?>
 
     <article>
-    <?php $fermate = get_service_child_list($_GET['id_service'])?>
 
-    <?php var_dump($fermate)?>
+        <?php if (isset($_GET['id_service'])) : ?>
+            <?php $fermate = get_service_child_list($_GET['id_service']) ?>
+
+            <?php if ($fermate) : ?>
+                <?php var_dump($fermate) ?>
+            <?php else : ?>
+                nessuna fermata impostata su questa linea
+            <?php endif; ?>
+            
+        <?php else : ?>
+            occhio non è impostata nessuna linea
+        <?php endif; ?>
 
 
     </article>

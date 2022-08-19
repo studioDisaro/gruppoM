@@ -36,42 +36,60 @@
 
 
 
-        <?php $linee = get_service_list()?>
-        <?php //var_dump($linee);?>
-
-        <?php foreach($linee as $linea):?>
-            <?=$linea["service__name"];?> -> <?=$linea["service_description"];?> <button onclick="window.location='linea_dettaglio.php?id_service=<?=$linea['service_id']?>'">VEDI FERMATE</button>
-            <hr>
-        <?php endforeach;?>
-
-
-
-
-        <table id="tabella">
+        <?php $linee = get_service_list() ?>
+        <?php //var_dump($linee);
+        ?>
+        <table id="">
             <thead>
                 <tr>
                     <th></th>
                     <th> linee urbane </th>
-                    <th> linee suburbane </th>
+                    <th> TIPO </th>
+                    <th> DESCRIZIONE </th>
+                    <th> </th>
             </thead>
             <tbody>
-                <tr>
-                    <td class="diurne"> diurne</td>
-                    <td> 06.00-01.00 </td>
-                    <td>06.00-23.30</td>
-                </tr>
+                <?php foreach ($linee as $linea) : ?>
+                    <tr>
+                        <td> <?= $linea["service__name"]; ?></td>
+                        <td> <?= $linea["service_type"]; ?> </td>
+                        <td><?= $linea["service_description"]; ?></td>
+                        <td><button onclick="window.location='linea_dettaglio.php?id_service=<?= $linea['service_id'] ?>'">VEDI FERMATE</button></td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
 
 
-                <tr>
-                    <td class="notturne"> notturne</td>
-                    <td> 00.30-05.00</td>
-                    <td>02.30-05.30</td>
-                </tr>
 
-            </tbody>
-            <tfoot>
-            </tfoot>
-        </table>
+
+                <table id="tabella">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th> linee urbane </th>
+                            <th> linee suburbane </th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="diurne"> diurne</td>
+                            <td> 06.00-01.00 </td>
+                            <td>06.00-23.30</td>
+                        </tr>
+
+
+                        <tr>
+                            <td class="notturne"> notturne</td>
+                            <td> 00.30-05.00</td>
+                            <td>02.30-05.30</td>
+                        </tr>
+
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>
 
     </article>
 

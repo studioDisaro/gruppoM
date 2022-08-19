@@ -32,8 +32,8 @@
     <section>
 
       <br>
-      <label for="username"> Username: </label><input id="username" type="text" name="username" value="_" required />
-      <label for="password"> Password: </label><input id="password" type="text" name="password" value="_" required />
+      <label for="username"> Username: </label><input id="username" type="text" name="username" value="" required />
+      <label for="password"> Password: </label><input id="password" type="text" name="password" value="" required />
       <br>
       <br>
       <input type="submit" name="invia" value="invia" />

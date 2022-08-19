@@ -42,7 +42,7 @@
 
             <br>
 
-            <label for="verbale">N° Verbale:</label><input id="verbale" type="text" name="N° Verbale" value="_" required />
+            <label for="verbale">N° Verbale:</label><input id="verbale" type="text" name="N° Verbale" value="" required />
             <br>
 
 
@@ -68,11 +68,11 @@
           <div> Accedi per poter completare il pagamento: </div>
           <br><br>
 
-          <label for="username1">Username:</label><input id="username1" type="text" name="username" value="_" size="30" maxlength="30" />
+          <label for="username1">Username:</label><input id="username1" type="text" name="username" value="" size="30" maxlength="30" />
 
           <br><br>
 
-          <label for="password2">Password:</label> <input id="password2" type="password" name="password" value="_" size="30" maxlength="30" />
+          <label for="password2">Password:</label> <input id="password2" type="password" name="password" value="" size="30" maxlength="30" />
 
           <br>
           <br>

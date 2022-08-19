@@ -32,9 +32,9 @@ session_start();
     <p class="testo">Qui potrà accedere al suo profilo, se dovesse rinscontrare problemi ci <a href="contatti.html"> contatti.</a></p>
     <section>
       <form action="login_action.php" method="post">
-       <input style=" margin-left: 50%" id="username" type="text" name="username" value="_"   /> 
+       <input style=" margin-left: 50%" id="username" type="text" name="username" value=""   /> 
       
-      Username: <input style=" margin-left: 50%"style=" margin-left: 50%" id="password" type="password" name="password" value="_"   />
+      Username: <input style=" margin-left: 50%"style=" margin-left: 50%" id="password" type="password" name="password" value=""   />
       Password: <input style=" margin-left: 50%" type="submit" name="invia" value="invia" />
 </form>
     </section>
