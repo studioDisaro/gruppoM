@@ -12,11 +12,11 @@
     <?php
         if (isset($_GET['action'])) {
             if ($_GET['action'] == "edit") {
-                $edit = edit_user($_GET['user_id'], $_GET['surname'], $_GET['name']);
+                $edit = edit_user($_GET['user_id'], $_GET['surname'], $_GET['name'], $_GET['email'], $_GET['age']);
             }
 
             if ($_GET['action'] == "new") {
-                $new = new_user($_GET['surname'], $_GET['name'], $_GET['username'], $_GET['password']);
+                $new = new_user($_GET['surname'], $_GET['name'], $_GET['email'], $_GET['age'], $_GET['username'], $_GET['password']);
             }
         }
 
@@ -47,6 +47,8 @@
             <input type="hidden" name="user_id" value="<?= $user_selected['user_id'] ?>">
             <input type="text" name="surname" value="<?= $user_selected['user_surname'] ?>">
             <input type="text" name="name" value="<?= $user_selected['user_name'] ?>">
+            <input type="email" name="email" value="<?= $user_selected['user_email'] ?>">
+            <input type="number" name="age" value="<?= $user_selected['user_age'] ?>">
             <p>UTENZA: <?= $user_selected['user_username'] ?></p>
             <button type="submit">Salva modifiche</button>
         </form>
@@ -58,6 +60,8 @@
                 <input type="hidden" name="action" value="new">
                 <input type="text" name="surname" placeholder="COGNOME" value="">
                 <input type="text" name="name" placeholder="NOME" value="">
+                <input type="email" name="email" placeholder="EMAIL"value="">
+                <input type="number" name="age" placeholder="ETA'"value="">
                 <input type="text" name="username" placeholder="USERNAME" value="">
                 <input type="password" name="password" placeholder="PASSWORD" value="">
                 <button onclick="check_exist_User()">EILA</button>

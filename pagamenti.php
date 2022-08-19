@@ -1,4 +1,4 @@
-<?php session_start() ; ?>
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="it">
@@ -13,68 +13,81 @@
   <meta name="description" content="assignment finale" />
   <meta name="author" content="giorgia canova manuela ferri" />
 
-  <meta name="viewport" content="width=device-width, initial scale 1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
 
 <body>
-  <?php include('header.php');?>
+  <?php include('header.php'); ?>
 
   <article>
     <h1> Pagamento Sanzioni </h1>
 
     <section>
 
-      <div id="relative">
-
-        <div> Accedi per poter completare il pagamento: </div>
-        <br><br>
-
-        <label for="username1">Username:</label><input id="username1" type="text" name="username" value="_" size="30" maxlength="30" />
-
-        <br><br>
-
-        <label for="password2">Password:</label> <input id="password2" type="password" name="password" value="_" size="30" maxlength="30" />
-
-        <br>
-        <br>
-        <input type="submit" name="invia" value="invia" />
-        
-
-        <br>
-        <br>
-        <span>Non ricordi Username o Password? </span>
-        <span> Non sei registrato? <a href="registrazione.php">Registrati</a> </span>
-      </div>
 
 
-      <div id="relative2">
 
-        <h2> Pagamento rapido </h2>
-        <p class="testo">
-          inserire numero di verbale e
-          scegliere il metodo di pagamento
-        </p>
+      <?php if (isset($_SESSION)) :
+        if (isset($_SESSION['auth_login'])) : ?>
+          <div id="relative2">
 
-        <br>
+            <h2> Pagamento rapido </h2>
+            <p class="testo">
+              inserire numero di verbale e
+              scegliere il metodo di pagamento
+            </p>
 
-        <label for="verbale">N° Verbale:</label><input id="verbale" type="text" name="N° Verbale" value="_" required />
-        <br>
+            <br>
+
+            <label for="verbale">N° Verbale:</label><input id="verbale" type="text" name="N° Verbale" value="_" required />
+            <br>
 
 
-        <input id="carta1" type="radio" name="metodo di pagamento" value="carta di credito/debito" />
-        <label for="carta1">carta di credito/debito</label>
-        <br>
-        <input id="Paypal" type="radio" name="metodo di pagamento" value="Paypal" />
-        <label for="Paypal"> Paypal</label>
+            <input id="carta1" type="radio" name="metodo di pagamento" value="carta di credito/debito" />
+            <label for="carta1">carta di credito/debito</label>
+            <br>
+            <input id="Paypal" type="radio" name="metodo di pagamento" value="Paypal" />
+            <label for="Paypal"> Paypal</label>
 
-        <br>
-        <br>
-        <input type="submit" name="invia" value="invia" />
-      </div>
-      <img src="immagini/cartee.png" alt="carte" title="carte" id="carte">
+            <br>
+            <br>
+            <input type="submit" name="invia" value="invia" />
+          </div>
+          <img src="immagini/cartee.png" alt="carte" title="carte" id="carte">
+        <?php endif; ?>
+      <?php endif; ?>
+
+
+
+      <?php if (!isset($_SESSION) || !isset($_SESSION['auth_login'])) : ?>
+        <div id="relative">
+
+          <div> Accedi per poter completare il pagamento: </div>
+          <br><br>
+
+          <label for="username1">Username:</label><input id="username1" type="text" name="username" value="_" size="30" maxlength="30" />
+
+          <br><br>
+
+          <label for="password2">Password:</label> <input id="password2" type="password" name="password" value="_" size="30" maxlength="30" />
+
+          <br>
+          <br>
+          <input type="submit" name="invia" value="invia" />
+
+
+          <br>
+          <br>
+          <span>Non ricordi Username o Password? </span>
+          <span> Non sei registrato? <a href="registrazione.php">Registrati</a> </span>
+        </div>
+      <?php endif; ?>
+
+
+
 
     </section>
   </article>

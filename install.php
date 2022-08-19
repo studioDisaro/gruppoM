@@ -64,6 +64,38 @@
         <?php else : ?>
             <div>ERRORE CREAZIONE TABELLA UTENZE <?=$conn->error;?></div>
         <?php endif; ?>
+
+
+
+        <?php $sql = " CREATE TABLE service (
+            service_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+            service__name VARCHAR(256) NOT NULL,
+            service_type INT(1) NOT NULL DEFAULT '1',/*1=bus, 2=tram, 3=metro, 4=servizio ferroviario metropolitano*/
+            service_description TEXT NULL DEFAULT NULL
+            )ENGINE=INNODB;";
+        ?>
+
+        <?php if($conn->query($sql)):?>
+            <div>TABELLA SERVIZIO CREATA CORRETTAMENTE</div>
+        <?php else : ?>
+            <div>ERRORE CREAZIONE TABELLA SERVIZIO <?=$conn->error;?></div>
+        <?php endif; ?>
+
+
+
+        <?php $sql = " CREATE TABLE service_child (
+            service_child_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
+            service_child_parentId INT(11) NOT NULL,
+            service_child_name VARCHAR(256) NOT NULL,
+            service_child_description TEXT NULL DEFAULT NULL
+            )ENGINE=INNODB;";
+        ?>
+
+        <?php if($conn->query($sql)):?>
+            <div>TABELLA SERVIZIO CREATA CORRETTAMENTE</div>
+        <?php else : ?>
+            <div>ERRORE CREAZIONE TABELLA SERVIZIO <?=$conn->error;?></div>
+        <?php endif; ?>
             
     <?php endif; ?>
 </body>

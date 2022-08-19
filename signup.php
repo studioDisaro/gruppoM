@@ -80,11 +80,6 @@ if (isset($_POST)) {
 
 }
 
-
-
-
-
-
 /*  forse l'età??
 controllare che le due mail siano uguali
       e che non ci siano username uguali 

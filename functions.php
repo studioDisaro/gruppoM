@@ -133,3 +133,65 @@ function edit_user($user_id, $user_surname, $email, $age)
         return $conn->error;
     }
 }
+
+function get_service_list()
+{
+    $conn = openConDB();
+    $records = [];
+
+    $sql = "SELECT * FROM `service`";
+    $res = $conn->query($sql);
+    if ($res) {
+        while ($row = $res->fetch_assoc()) {
+            $records[] = $row;
+        }
+    } else {
+        return $conn->error;
+    }
+
+    return $records;
+}
+
+function get_service_byID($service_id)
+{
+    $conn = openConDB();
+    $sql = "SELECT * FROM `service` WHERE `service_id` = '$service_id';";
+    $res = $conn->query($sql);
+    if ($res) {
+        $record = $res->fetch_assoc();
+        return $record;
+    } else {
+        return $conn->error;
+    }
+}
+
+function get_service_child_list($service_id)
+{
+    $conn = openConDB();
+    $records = [];
+
+    $sql = "SELECT * FROM `service_child` WHERE `service_child_parentId` = '$service_id'";
+    $res = $conn->query($sql);
+    if ($res) {
+        while ($row = $res->fetch_assoc()) {
+            $records[] = $row;
+        }
+    } else {
+        return $conn->error;
+    }
+
+    return $records;
+}
+
+function get_service_child_byID($service_child_id)
+{
+    $conn = openConDB();
+    $sql = "SELECT * FROM `service_child` WHERE `service_child_id` = '$service_child_id';";
+    $res = $conn->query($sql);
+    if ($res) {
+        $record = $res->fetch_assoc();
+        return $record;
+    } else {
+        return $conn->error;
+    }
+}
