@@ -70,7 +70,7 @@
         <?php $sql = " CREATE TABLE service (
             service_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY UNIQUE,
             service__name VARCHAR(256) NOT NULL,
-            service_type INT(1) NOT NULL DEFAULT '1',/*1=bus, 2=tram, 3=metro, 4=servizio ferroviario metropolitano*/
+            service_type VARCHAR(256) DEFAULT 'BUS',/*1=bus, 2=tram, 3=metro, 4=servizio ferroviario metropolitano*/
             service_description TEXT NULL DEFAULT NULL
             )ENGINE=INNODB;";
         ?>

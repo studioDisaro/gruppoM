@@ -20,7 +20,9 @@
 </head>
 
 <body>
-    <?php include('header.php');?>
+    <?php include('header.php');
+    include_once('functions.php');
+    ?>
 
     <article>
         <h1>Linee e Orari:</h1>
@@ -31,6 +33,20 @@
             Per evitare spiacevoli inconvenienti, si consiglia di tener sotto controllo la pagina degli <a href="avvisi.html">avvisi.</a> <br>
             Nella seguente tabella può trovare gli orari delle corse diurne e notturne: </p>
         <br>
+
+
+
+        <?php $linee = get_service_list()?>
+        <?php //var_dump($linee);?>
+
+        <?php foreach($linee as $linea):?>
+            <?=$linea["service__name"];?> -> <?=$linea["service_description"];?> <button onclick="window.location='linea_dettaglio.php?id_service=<?=$linea['service_id']?>'">VEDI FERMATE</button>
+            <hr>
+        <?php endforeach;?>
+
+
+
+
         <table id="tabella">
             <thead>
                 <tr>
