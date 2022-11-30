@@ -42,8 +42,8 @@ if (isset($_SESSION)) {
         <?php echo "<h1>Benvenuto " . $_SESSION['user']['user_name'] . " in Moving in Turin!</h1>"; ?>
 
         <button class="btn-admin" onclick="location.href='users.php'">Gestisci utenze</button>
-        <button class="btn-admin">Gestisci tipi di servizio</button>
-        <button class="btn-admin">Gestisci servizi</button>
+        <button class="btn-admin" onclick="location.href='service_types.php'">Gestisci tipi di servizio</button>
+        <button class="btn-admin" onclick="location.href='services.php'">Gestisci servizi</button>
 
         <footer>
             <div class="footerhome">

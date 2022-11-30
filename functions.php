@@ -281,7 +281,7 @@ function get_service_list()
     $conn = openConDB();
     $records = [];
 
-    $sql = "SELECT * FROM `service`";
+    $sql = "SELECT * FROM `services`";
     $res = $conn->query($sql);
     if ($res) {
         while ($row = $res->fetch_assoc()) {
@@ -297,7 +297,7 @@ function get_service_list()
 function get_service($service_id)
 {
     $conn = openConDB();
-    $sql = "SELECT * FROM `service` WHERE `service_id` = '$service_id';";
+    $sql = "SELECT * FROM `services` WHERE `service_id` = '$service_id';";
     $res = $conn->query($sql);
     if ($res) {
         $record = $res->fetch_assoc();
@@ -340,7 +340,7 @@ function edit_service($service_id, $name, $type, $description="")
 
 function delete_service($service_id)
 {
-    $sql = "DELETE FROM `service` WHERE `service_id` = '$service_id';";
+    $sql = "DELETE FROM `services` WHERE `service_id` = '$service_id';";
     return delete_record($sql);
 }
 
