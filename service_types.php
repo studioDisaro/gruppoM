@@ -65,6 +65,7 @@ if (isset($_SESSION)) {
         <?php echo "<h1>Benvenuto " . $_SESSION['user']['user_name'] . " in Moving in Turin!</h1>"; ?>
 
         <ul>
+            <button class="btn-new" onclick="location='admin.php'">PAGINA AMMINISTRATORE</button><br>
             <?php foreach ($users as $user) : ?>
                 <button class="btn-admin" onclick="location='service_types.php?service_type_id=<?= $user['service_type_id'] ?>'"><?= $user['service_type_name'] ?></button>
             <?php endforeach; ?>
@@ -95,7 +96,7 @@ if (isset($_SESSION)) {
                     <input class="form-field" type="hidden" name="action" value="new" required>
                     <input class="form-field" type="text" name="name" placeholder="NOME" value="" required>
                     <textarea class="form-field" style="height:100px" name="description"></textarea>
-                    
+
                     <button class="btn-new" type="submit">Salva modifiche</button>
                 </form>
             <?php endif; ?>

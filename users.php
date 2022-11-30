@@ -65,6 +65,7 @@ if (isset($_SESSION)) {
         <?php echo "<h1>Benvenuto " . $_SESSION['user']['user_name'] . " in Moving in Turin!</h1>"; ?>
 
         <ul>
+            <button class="btn-new" onclick="location='admin.php'">PAGINA AMMINISTRATORE</button><br>
             <?php foreach ($users as $user) : ?>
                 <button class="btn-admin" onclick="location='users.php?user_id=<?= $user['user_id'] ?>'"><?= $user['user_surname'] ?></button>
             <?php endforeach; ?>
