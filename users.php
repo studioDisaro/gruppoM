@@ -23,7 +23,7 @@ if (isset($_SESSION)) {
 
     <meta charset="UTF-8">
 
-    <title>Home </title>
+    <title>Gestisci utenze</title>
 
     <meta name="keywords" content="assignment finale, html, css" />
     <meta name="description" content="assignment finale" />
