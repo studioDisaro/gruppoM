@@ -53,7 +53,7 @@ if (isset($_SESSION)) {
         $service_type_selected = get_service_type($_GET['service_type_id']);
     }
 
-    $users = get_service_type_list();
+    $types = get_service_type_list();
     ?>
 
 </head>
@@ -66,8 +66,8 @@ if (isset($_SESSION)) {
 
         <ul>
             <button class="btn-new" onclick="location='admin.php'">PAGINA AMMINISTRATORE</button><br>
-            <?php foreach ($users as $user) : ?>
-                <button class="btn-admin" onclick="location='service_types.php?service_type_id=<?= $user['service_type_id'] ?>'"><?= $user['service_type_name'] ?></button>
+            <?php foreach ($types as $type) : ?>
+                <button class="btn-admin" onclick="location='service_types.php?service_type_id=<?= $type['service_type_id'] ?>'"><?= $type['service_type_name'] ?></button>
             <?php endforeach; ?>
 
             <button class="btn-new" onclick="location='service_types.php?action=new_service_type'">NUOVO TIPO SERVIZIO</button>

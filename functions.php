@@ -297,7 +297,7 @@ function get_service_list()
 function get_service($service_id)
 {
     $conn = openConDB();
-    $sql = "SELECT * FROM `services` WHERE `service_id` = '$service_id';";
+    $sql = "SELECT * FROM `services` WHERE `services_id` = '$service_id';";
     $res = $conn->query($sql);
     if ($res) {
         $record = $res->fetch_assoc();
@@ -313,7 +313,7 @@ function new_service($name, $type, $description="")
     $name = $conn->escape_string($name);
     $description = $conn->escape_string($description);
 
-    $sql = "INSERT `services` (`service_name`, `services_type`, `service_description`) VALUES ('$name', '$type', '$description');";
+    $sql = "INSERT `services` (`services_name`, `services_type`, `services_description`) VALUES ('$name', '$type', '$description');";
     $res = $conn->query($sql);
     if ($res) {
         $services_id = $conn->insert_id;
@@ -329,7 +329,7 @@ function edit_service($service_id, $name, $type, $description="")
     $name = $conn->escape_string($name);
     $description = $conn->escape_string($description);
 
-    $sql = "UPDATE `services` SET `service_name`='$name', `services_type`='$type', `service_description`='$description' WHERE `service_id` = '$service_id';;";
+    $sql = "UPDATE `services` SET `services_name`='$name', `services_type`='$type', `services_description`='$description' WHERE `services_id` = '$service_id';;";
     $res = $conn->query($sql);
     if ($res) {
         return true;
@@ -340,7 +340,7 @@ function edit_service($service_id, $name, $type, $description="")
 
 function delete_service($service_id)
 {
-    $sql = "DELETE FROM `services` WHERE `service_id` = '$service_id';";
+    $sql = "DELETE FROM `services` WHERE `services_id` = '$service_id';";
     return delete_record($sql);
 }
 
@@ -400,14 +400,14 @@ function new_service_child($service_child_parentId, $name, $description="")
     }
 }
 
-function update_service_child($service_child_id, $service_child_parentId, $name, $description="")
+function update_service_child($service_child_id, $name, $description="")
 {
     $conn = openConDB();
     $conn = openConDB();
     $name = $conn->escape_string($name);
     $description = $conn->escape_string($description);
 
-    $sql = "UPDATE `service_child` SET `service_child_parentId`='$service_child_parentId', `service_child_name`='$name', `service_child_description`='$description' WHERE `service_child_id`='$service_child_id';";
+    $sql = "UPDATE `service_child` SET `service_child_name`='$name', `service_child_description`='$description' WHERE `service_child_id`='$service_child_id';";
     $res = $conn->query($sql);
     if ($res) {
         $services_id = $conn->insert_id;

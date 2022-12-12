@@ -43,18 +43,21 @@
             <thead>
                 <tr>
                     <th></th>
-                    <th> linee urbane </th>
                     <th> TIPO </th>
+                    <th> FERMATE </th>
                     <th> DESCRIZIONE </th>
                     <th> </th>
             </thead>
             <tbody>
                 <?php foreach ($linee as $linea) : ?>
+                    <?php $type = get_service_type($linea["services_type"])?>
+                    <?php $child = get_service_child_list($linea["services_id"])?>
                     <tr>
-                        <td> <?= $linea["service__name"]; ?></td>
-                        <td> <?= $linea["service_type"]; ?> </td>
-                        <td><?= $linea["service_description"]; ?></td>
-                        <td><button onclick="window.location='linea_dettaglio.php?id_service=<?= $linea['service_id'] ?>'">VEDI FERMATE</button></td>
+                        <td> <?= $linea["services_name"]; ?></td>
+                        <td> <?= $type["service_type_name"]; ?> </td>
+                        <td><?= count($child); ?></td>
+                        <td><?= $linea["services_description"]; ?></td>
+                        <td><button class="btn-admin" onclick="window.location='linea_dettaglio.php?id_service=<?= $linea['services_id'] ?>'">VEDI FERMATE</button></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>

@@ -30,7 +30,16 @@
             <?php $fermate = get_service_child_list($_GET['id_service']) ?>
 
             <?php if ($fermate) : ?>
-                <?php var_dump($fermate) ?>
+                <h1>Lista fermate</h1>
+                <?php $n = 1;?>
+                <?php foreach($fermate as $fermata):?>
+                    <div style="margin-bottom: 10px; margin-top:5px; border-bottom: 1px solid lightgray">
+                        FERMATA <b><?= $n?></b><br/>
+                        <?php $n++;?>
+                        NOME: <b><?=$fermata['service_child_name'];?></b><br/>
+                        DESCRIZIONE: <?=$fermata['service_child_description'];?><br/>
+                    </div>
+                    <?endforeach?>
             <?php else : ?>
                 nessuna fermata impostata su questa linea
             <?php endif; ?>
