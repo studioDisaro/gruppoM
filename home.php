@@ -30,6 +30,7 @@
       echo "<h2>Benvenuto in Moving in Turin! </h2>";
     }
     ?>
+    
 
     <p class="testo">Qui avrete sempre a portata di mano informazioni, avvisi e molto altro sulla città di Torino! <br>
       La nostra è una società nata nel 1990: entrata sul mercato in tempi relativamente recenti,<br>
