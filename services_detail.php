@@ -44,7 +44,7 @@ if (isset($_SESSION)) {
     }
 
     if (!isset($_SESSION['service_id'])) {
-        header('Location: services_detail.php');
+        header('Location: services.php');
     }
 
 
@@ -65,7 +65,7 @@ if (isset($_SESSION)) {
         $service_child_selected = get_service_child($_GET['service_child_id']);
     }
 
-    $service_selected = get_service($_SESSION['service_id']);
+    $service_selected = get_linee($_SESSION['service_id']);
     $service_child_list = get_service_child_list($_SESSION['service_id']);
     ?>
 

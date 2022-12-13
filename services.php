@@ -42,7 +42,7 @@ if (isset($_SESSION)) {
         }
 
         if ($_GET['action'] == "new") {
-            $new = new_service($_GET['name'], $_GET['type'], $_GET['description']);
+            $new = new_linea($_GET['name'], $_GET['type'], $_GET['description']);
         }
         if ($_GET['action'] == "delete") {
             $delete = delete_service($_GET['service_id']);
@@ -50,7 +50,7 @@ if (isset($_SESSION)) {
     }
 
     if (isset($_GET['service_id'])) {
-        $service_selected = get_service($_GET['service_id']);
+        $service_selected = get_linee($_GET['service_id']);
     }
 
     $services = get_service_list();

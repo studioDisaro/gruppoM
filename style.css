@@ -440,6 +440,7 @@ td {
 }
 
 .btn-admin {
+	margin-bottom: 8px;
 	cursor: pointer;
 	color: #fff;
 	background-color: #17a2b8;
@@ -461,6 +462,7 @@ td {
 }
 
 .btn-new {
+	margin-bottom: 8px;
 	cursor: pointer;
 	color: #fff;
 	background-color: #4ccc11;
@@ -482,6 +484,7 @@ td {
 }
 
 .btn-delete {
+	margin-bottom: 8px;
 	cursor: pointer;
 	color: #fff;
 	background-color: #ce1e1e;

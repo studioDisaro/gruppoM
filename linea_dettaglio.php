@@ -39,7 +39,7 @@
                         NOME: <b><?=$fermata['service_child_name'];?></b><br/>
                         DESCRIZIONE: <?=$fermata['service_child_description'];?><br/>
                     </div>
-                    <?endforeach?>
+                <?php endforeach?>
             <?php else : ?>
                 nessuna fermata impostata su questa linea
             <?php endif; ?>

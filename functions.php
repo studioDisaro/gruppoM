@@ -294,7 +294,7 @@ function get_service_list()
     return $records;
 }
 
-function get_service($service_id)
+function get_linee($service_id)
 {
     $conn = openConDB();
     $sql = "SELECT * FROM `services` WHERE `services_id` = '$service_id';";
@@ -307,7 +307,7 @@ function get_service($service_id)
     }
 }
 
-function new_service($name, $type, $description="")
+function new_linea($name, $type, $description="")
 {
     $conn = openConDB();
     $name = $conn->escape_string($name);
